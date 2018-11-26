@@ -29,14 +29,17 @@
 <body>
 	<h2>Velkominn! {{u}}</h2>
 	<p><a href="/#i">Signout</a></p>
-	<div class="container">
+	<div>
 		<h3>Gera frétt</h3>
-		<form method="post" action="/login" accept-charset="ISO-8859-1" id="inn">
- 		<br>Notendanafn: <br>
- 		<input type="text" name="user" placeholder="Notendanafn" required="">
- 		<br>Lykilord: <br>
- 		<input type="text" name="pass" placeholder="password" required="">
- 		<input type="submit" value="Innskrá">
+		<form method="post" action="/nyfrett" accept-charset="ISO-8859-1" id="inn">
+			<br>Titill<br>
+			<input type="text" name="title">
+			<br>
+			<textarea rows="15" cols="100" name="frett"></textarea>
+			<br>Höfundur<br>
+			<input type="text" name="nafn">
+	 		<input type="submit" value="Senda">
+	 		<p><a href="/">Fréttasíða</a></p>
  		</form>
 	</div>
 </body>

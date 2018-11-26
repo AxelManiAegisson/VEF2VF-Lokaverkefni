@@ -37,5 +37,15 @@
  		<input type="text" name="pass" placeholder="Password" required="">
  		<input type="submit" value="Innskrá">
  	</form>	
+ 	<h3>Eyða frétt</h3>
+  	<form method="post" action="/eydafrett" accept-charset="ISO-8859-1" id="inn">
+ 		<br>Notendanafn: <br>
+ 		<input type="text" name="user" placeholder="Notendanafn" required="">
+ 		<br>Lykilord: <br>
+ 		<input type="text" name="pass" placeholder="Password" required="">
+ 		<br>Fréttar ID:
+ 		<input type="text" name="id">
+ 		<input type="submit" value="Innskrá">
+ 	</form>
 </body>
 </html>

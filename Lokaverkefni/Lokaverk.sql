@@ -11,7 +11,9 @@ values("admin","admin","Axel");
 
 create table frett(
 id int(11) auto_increment primary key,
+titill varchar(50) not null,
 frett text not null,
+hofundur varchar(50) not null,
 user varchar(20) not null,
 foreign key (user) references admin(user)
 );

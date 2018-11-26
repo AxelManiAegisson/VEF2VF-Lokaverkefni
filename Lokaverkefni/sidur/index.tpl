@@ -34,14 +34,20 @@
 	<h1 class="titill">Fréttasíða</h1>
 	<h3>Login:</h3>
  	<form method="post" action="/login" accept-charset="ISO-8859-1" id="inn">
- 		<br>Notendanafn: <br>
+ 		Notendanafn: <br>
  		<input type="text" name="user" placeholder="Notendanafn" required="">
  		<br>Lykilord: <br>
  		<input type="text" name="pass" placeholder="Password" required="">
  		<input type="submit" value="Innskrá">
  	</form>
  	<div class="container">
-
+ 	%for row in rows:
+		<tr>
+		%for col in row:
+			<td>{{col}}</td>
+		%end
+		</tr>
+	%end
  	</div>
 </body>
 </html>
