@@ -5,7 +5,7 @@ from bottle import *
 def index():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2507002960', passwd='mypassword',db='2507002960_lokaverkvef')
     c = conn.cursor()
-    c.execute("SELECT  titill, frett, hofundur from 2507002960_lokaverkvef.frett")
+    c.execute("SELECT  id,titill, frett, hofundur from 2507002960_lokaverkvef.frett")
     result = c.fetchall()
     conn.close()
     c.close()
