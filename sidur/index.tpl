@@ -62,6 +62,7 @@
  	<div class="container">
  		<table>
  			<tr>
+			<thID</th>
 		    	<th>Titill</th>
 		    	<th>Fréttir</th> 
 		    	<th>Höfundur</th>
