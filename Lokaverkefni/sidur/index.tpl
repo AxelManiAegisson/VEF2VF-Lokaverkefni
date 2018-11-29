@@ -5,7 +5,6 @@
 	<title>Fréttasíða</title>
 	<style type="text/css">
 		body {
-			margin: 3em;
 		}
 		h1 {
 			font-style: bold;
@@ -17,37 +16,69 @@
 			padding: .3em;
 			margin: .3em;
 		}
-		.titill{
+		header{
 			text-align: center;
+			background-color: rgb(50,49,51);
+			width: 100%;
+			color: white;
+			padding: 20px;
+			color: white;
+			font-size: 30px;
+
 		}
 		.container{
-			max-width: 60em;
+			max-width: 70em;
 		    margin: 0 auto;
 		    border-radius: 25px;
 		}
 		div {
     		display: block;
-		}	
+		}
+		table{
+			text-align: center;
+			width: 100%;
+		}
+		footer {
+		   position:absolute;
+		   bottom:0;
+		   width:100%;
+		   height:60px;  
+		}
+		.right{
+			float: right;
+			margin-left: 10em;
+		}
+		th, td {
+		    padding: 15px;
+		    text-align: left;
+		    border-bottom: 1px solid #ddd;
+		}
 	</style>
 </head>
 <body>
-	<h1 class="titill">Fréttasíða</h1>
-	<h3>Login:</h3>
- 	<form method="post" action="/login" accept-charset="ISO-8859-1" id="inn">
- 		Notendanafn: <br>
- 		<input type="text" name="user" placeholder="Notendanafn" required="">
- 		<br>Lykilord: <br>
- 		<input type="text" name="pass" placeholder="Password" required="">
- 		<input type="submit" value="Innskrá">
- 	</form>
+	<header>
+		<h1 class="titill">Fréttasíða</h1>		
+	</header>
  	<div class="container">
- 	%for row in rows:
-		<tr>
-		%for col in row:
-			<td>{{col}}</td>
-		%end
-		</tr>
-	%end
+ 		<table>
+ 			<tr>
+		    	<th>Titill</th>
+		    	<th>Fréttir</th> 
+		    	<th>Höfundur</th>
+		  	</tr>
+ 			%for row in rows:
+				<tr>
+				%for col in row:
+					<td>{{col}}</td>
+				%end
+				</tr>
+			%end
+ 		</table>
  	</div>
+ 	<footer>
+ 		Síða og forritun: Axel Máni Ægisson
+		<a href="/admin" class="vinstri">login</a>
+	</footer>
 </body>
+
 </html>

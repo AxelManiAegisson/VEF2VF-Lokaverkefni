@@ -5,15 +5,23 @@
 	<title>Búa til frétt</title>
 	<style type="text/css">
 		body{
-			margin: 3em;
 		}
 
 		h2{
-			color: #a00;
 			font-family: sans-serif;
 		}
 		h3 {
 			font-style: bold;
+		}
+		header{
+			text-align: center;
+			background-color: rgb(50,49,51);
+			width: 100%;
+			color: white;
+			padding: 20px;
+			color: white;
+			font-size: 30px;
+
 		}
 		.container{
 			max-width: 60em;
@@ -27,14 +35,16 @@
 	</style>
 </head>
 <body>
-	<h2>Velkominn! {{u}}</h2>
+	<header>
+		<h2>Velkominn! {{u}}</h2>
+	</header>	
 	<p><a href="/#i">Signout</a></p>
 	<div>
 		<h3>Gera frétt</h3>
 		<form method="post" action="/nyfrett" accept-charset="ISO-8859-1" id="inn">
 			<br>Titill<br>
 			<input type="text" name="title">
-			<br>
+			<br>Frétt<br>
 			<textarea rows="15" cols="100" name="frett"></textarea>
 			<br>Höfundur<br>
 			<input type="text" name="nafn">

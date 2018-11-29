@@ -14,26 +14,11 @@ def index():
 
 
 
+@route('/admin')
+def ritstjorn():
+    return template('sidur/admin')
 
 
-@route('/login', method='POST')
-def login():
-    u = request.forms.get('user')
-    p = request.forms.get('pass')
-
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2507002960', passwd='mypassword',db='2507002960_lokaverkvef')
-    cur = conn.cursor()
-
-    cur.execute("SELECT count(*) From 2507002960_lokaverkvef.admin where user=%s and pass=%s",(u,p))
-    result = cur.fetchone()
-    print(result)
-
-    if result[0] == 1:
-        cur.close()
-        conn.close()
-        return template('sidur/admin',u=u)
-    else:
-        return template('sidur/adgangurbannadur')
 
 @route('/gerafrett', method='POST')
 def news():
@@ -68,7 +53,7 @@ def nyfrett():
     cur.close()
     conn.close()
 
-    return template('sidur/index')
+    redirect('/')
 
 
 @route('/eydafrett', method='POST')
@@ -79,7 +64,6 @@ def eyda():
 
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2507002960', passwd='mypassword',db='2507002960_lokaverkvef')
     cur = conn.cursor()
-
     cur.execute("SELECT count(*) From 2507002960_lokaverkvef.admin where user=%s and pass=%s",(n,p))
     result = cur.fetchone()
     print(result)
@@ -88,7 +72,7 @@ def eyda():
         conn.commit()
         cur.close()
         conn.close()
-        return template('sidur/index')
+        redirect('/')
     else:
         return template('sidur/adgangurbannadur')
 
